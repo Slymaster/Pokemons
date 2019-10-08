@@ -1,0 +1,35 @@
+<!--
+<p *ngIf="age > 18">Vous êtes majeur</p>
+-->
+<h3 class="center">{{title}}</h3>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let pokemon of pokemons" class="col s6 m4">
+      <div class="card horizontal" (click)="onClick(pokemon)">
+        <div class="card-image">
+          <img src="{{pokemon.picture}}"/>
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{pokemon.name}}</p>
+
+            <span *ngFor='let type of pokemon.types' class="{{type | pokemonTypeColor}}">{{type}}</span>
+
+<!--            <p>{{pokemon.hp}}</p>
+            <p>{{pokemon.cp}}</p>-->
+<!--            <div class="card-panel {{getColor(pokemon)}} lighten-2">
+            <p>{{pokemon.types[0]}}</p>
+            </div>-->
+              <p><small>{{pokemon.created | date:"dd/MM/yyyy"}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<button (click)="onClick()">Valider</button>
+<input (keyup)="onKey($event)">
+<p>{{ value }}</p>
+-->
