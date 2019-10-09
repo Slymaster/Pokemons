@@ -16,7 +16,7 @@ export class PokemonService {
 
     for (let index = 0; index < pokemons.length; index++) {
       if (id === pokemons[index].id) {
-        pokemons[index];
+        return pokemons[index];
       }
     }
   }
