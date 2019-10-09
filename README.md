@@ -12,7 +12,7 @@ This is the main page of the web application
 
 We can get the details on a pokemon by a simple click on its label
 
-![alt text](http://image.noelshack.com/fichiers/2019/41/3/1570613507-pokemons-home-page.png)
+![alt text](http://image.noelshack.com/fichiers/2019/41/3/1570613511-pokemon-details.png)
 
 ## 404
 
