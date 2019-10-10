@@ -25,10 +25,8 @@ import {PokemonService} from "./pokemon.service";
                           <button class="waves-effect waves-light btn-large green">
                               OUI
                           </button>
-
-                      <a href="/" class="waves-effect waves-light btn-large red">
-                          NON
-                      </a>
+                          
+                          
                       </div>
 
                   </div>
