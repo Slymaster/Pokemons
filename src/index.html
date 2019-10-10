@@ -6,29 +6,27 @@
   <title>Pokemons</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
-<body>
-<pokemon-app>
-  Loading...
-</pokemon-app>
-</body>
-</html>
-
-
-<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-
-<!--<style>
-    #toto {
+  <style>
+    #wrapper td {
+      vertical-align: middle;
       text-align: center;
-      padding: 100px 0 0 0;
     }
 
-    #loading {
-      -webkit-animation: rotation .5s infinite linear;
+    #wrapper img {
+      -webkit-animation: rotation 1s infinite forwards;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 500px;
+      height: 500px;
+      margin-top: -250px; /* Half the height */
+      margin-left: -250px; /* Half the width */
     }
 
     @-webkit-keyframes rotation {
@@ -39,4 +37,25 @@
         -webkit-transform: rotate(359deg);
       }
     }
-  </style>-->
+  </style>
+</head>
+<body>
+<pokemon-app>
+  <table id="wrapper">
+    <tr>
+      <i class="material-icons">
+        info
+      </i>
+      <i>Chargement des données...</i>
+      <td>
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png" alt="" />
+      </td>
+    </tr>
+  </table>
+</pokemon-app>
+</body>
+</html>
+
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+
+

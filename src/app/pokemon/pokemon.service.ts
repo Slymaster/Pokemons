@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Pokemon } from './pokemon';
-import { POKEMONS } from './mock-pokemons';
+import { InMemoryDataService } from "../in-memory-data.service";
 
 @Injectable()
-export class PokemonService {
+export class PokemonService
+  //implements InMemoryDataService
+  {
+    constructor(private inMemoryDataService: InMemoryDataService) {
+
+    }
 
   // retourne tous les pokémons
   getPokemons() {
-    return POKEMONS;
+    return this.inMemoryDataService.createDb().POKEMONS;
   }
 
   // Retourne le pokémon avec l'identifiant passé en paramètre

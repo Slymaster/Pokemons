@@ -1,7 +1,22 @@
 <h1 class='center'>Pokémons</h1>
+
   <div class='container'>
     <div class="row">
-    <div *ngFor='let pokemon of pokemons' class="col s6 m4">
+
+        <nav>
+          <div class="nav-wrapper">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label for="search"><i class="material-icons">search</i></label>
+                <!-- I've put "red-text" class to emphasize -->
+                <i class="material-icons red-text">close</i>
+              </div>
+            </form>
+          </div>
+        </nav>
+
+      <div *ngFor='let pokemon of pokemons' class="col s6 m4">
       <div class="card horizontal" (click)="selectPokemon(pokemon)" pkmn-border-card>
         <div class="card-image">
           <img [src]="pokemon.picture">

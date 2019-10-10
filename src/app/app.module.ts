@@ -7,11 +7,14 @@ import { PokemonTypeColorPipe } from './pokemon/pokemon-type-color.pipe';
 import { ListPokemonComponent } from './pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './pokemon/detail-pokemon.component';
 import { PageNotFoundComponent } from './page-not-found.component';
-import {PokemonService} from "./pokemon/pokemon.service";
+import { PokemonService } from "./pokemon/pokemon.service";
 
 import { PokemonFormComponent } from "./pokemon/pokemon-form.component";
 import { FormsModule } from "@angular/forms";
 import { EditPokemonComponent } from "./pokemon/edit-pokemon.component";
+import { HttpClientModule } from "@angular/common/http";
+import {InMemoryDataService} from "./in-memory-data.service";
+import {DeletePokemonComponent} from "./pokemon/delete-pokemon.component";
 
 @NgModule({
   declarations: [
@@ -21,14 +24,16 @@ import { EditPokemonComponent } from "./pokemon/edit-pokemon.component";
     DetailPokemonComponent,
     PageNotFoundComponent,
     PokemonFormComponent,
-    EditPokemonComponent
+    EditPokemonComponent,
+    DeletePokemonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [PokemonService],
+  providers: [PokemonService, InMemoryDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
