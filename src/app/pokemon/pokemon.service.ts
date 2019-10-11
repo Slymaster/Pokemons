@@ -13,23 +13,28 @@ export class PokemonService
 
     }
 
-    baseUrl = 'http://localhost:4200/pokemons';
+    apiURL = 'http://localhost:5000';
 
 
     // retourne tous les pokémons
   getPokemons() {
-    return this.inMemoryDataService.createDb().POKEMONS;
+    return this.httpClient.get<Pokemon[]>(`${this.apiURL}/getPokemonsListe`);
   }
 
   // Retourne le pokémon avec l'identifiant passé en paramètre
-  getPokemon(id: number): Pokemon {
-    let pokemons = this.getPokemons();
+  getPokemon(id: number) {
+    return this.httpClient.get<Pokemon>(`${this.apiURL}/getPokemon/${id}`);
+
+
+
+
+/*    let pokemons = this.getPokemons();
 
     for (let index = 0; index < pokemons.length; index++) {
       if (id === pokemons[index].id) {
         return pokemons[index];
       }
-    }
+    }*/
   }
 
   getPokemonTypes(): string[] {
