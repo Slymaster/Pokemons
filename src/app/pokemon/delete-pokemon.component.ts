@@ -21,20 +21,14 @@ import {PokemonService} from "./pokemon.service";
                   <div class="card-panel">
                       <!-- Submit button -->
                       <div class="section center">
-
                           <button class="waves-effect waves-light btn-large green">
                               OUI
                           </button>
-                          
-                          
                       </div>
-
                   </div>
               </div>
           </div>
       </form>
-
-
   `,
 })
 export class DeletePokemonComponent implements OnInit {
@@ -47,6 +41,7 @@ export class DeletePokemonComponent implements OnInit {
     private router: Router) {
   }
 
+
   ngOnInit(): void {
     let id = +this.route.snapshot.params['id'];
     this.pokemon = this.pokemonService.getPokemon(id);
@@ -54,7 +49,11 @@ export class DeletePokemonComponent implements OnInit {
 
 
   onSubmit() {
-    console.log("Submit form !");
+    this.pokemonService.deletePokemon(this.pokemon.id);
+    //this.pokemonService.deletePokemon(this.pokemon.id).subscribe(
+    //  () => console.log(`Pokemon with ID = $ deleted`));
+    //this.notifyDelete.emit(this.pokemon.id);
+
     let link = ['/'];
     this.router.navigate(link);
   }
